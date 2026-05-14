@@ -70,7 +70,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'github-creds', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         sh '''
                         cat deploy.yaml
-                        sed -i "s/32/${BUILD_NUMBER}/g" deploy.yaml
+                        sed -i "s|image:.*|image: priyappi/cicd-ete:${BUILD_NUMBER}|g" deploy.yaml
                         cat deploy.yaml
                         git config user.email "jenkins@example.com"
                         git config user.name "jenkins"
