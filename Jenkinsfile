@@ -75,7 +75,7 @@ pipeline {
                         git config user.email "jenkins@example.com"
                         git config user.name "jenkins"
                         git add deploy.yaml
-                        git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
+                        git commit -m 'Updated the deploy yaml | Jenkins Pipeline' || true
                         git remote -v
                         git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/priyankaappikonda8699-git/cicd-manifests.git HEAD:main
                         '''                        
